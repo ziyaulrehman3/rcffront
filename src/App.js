@@ -1,9 +1,21 @@
-import OurWork from './components/ourWork/ourWork'
+import {Routes,Route} from 'react-router-dom'
 
-export default function App(){
+import OurWork from './components/OurWork'
+
+
+const App=function(){
 
   return (
 
-    <OurWork/>
+
+          <Routes>
+              <Route path='OurWork' element={<OurWork/>}/>
+          </Routes>
+
+
+   
+    
   )
 }
+
+export default App;
