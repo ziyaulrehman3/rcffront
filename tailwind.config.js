@@ -2,7 +2,10 @@
 export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"], // ✅ Ensure this is correct
   theme: {
-    extend: {},
+    extend: {
+
+      
+    },
   },
   plugins: [],
 };
