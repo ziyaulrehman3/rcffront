@@ -29,7 +29,7 @@ export default function EventCart({title,date,location,desc,eventId,image,design
 
             </div>
  
-            <div className='flex justify-center items-center w-full lg:w-[40%]'>
+            <div className={`flex  ${design?'justify-center':'justify-start'} items-center w-full lg:w-[40%]`}>
             
                 <img src={image} alt={eventId} className={`  object-cover ${design?'rounded-full aspect-square sm:h-72 sm:w-72':'rounded-lg aspect-[4/5] sm:h-72 sm:w-64'}`}/>
 
