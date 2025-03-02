@@ -21,7 +21,7 @@ export default function OurWork(){
             try{
                 const apiResponse=await axios.get('/getAllEvents')
                 
-                const tempRes=apiResponse.json()
+                const tempRes=await apiResponse.json()
                 console.log(tempRes)
 
                const newapiResponse=await tempRes.data.map((set)=>({
