@@ -19,9 +19,9 @@ export default function OurWork(){
         const fetchEvent=async ()=>{
 
             try{
-                let apiResponse=await axios.get('/getAllEvents')
+                const apiResponse=await axios.get('/getAllEvents')
 
-                apiResponse=await apiResponse.data.map((set)=>({
+               const newapiResponse=await apiResponse.data.map((set)=>({
                     _id:set._id,
                     eventName:set.eventName,
                     sDate:set.sDate,
@@ -30,7 +30,7 @@ export default function OurWork(){
                     image:set.images[0],
                 }))
          
-                setEvents(apiResponse);
+                setEvents(newapiResponse);
                 
 
 
