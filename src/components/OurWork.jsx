@@ -20,6 +20,7 @@ export default function OurWork(){
 
             try{
                 const apiResponse=await axios.get('/getAllEvents')
+                console.log(apiResponse)
 
                const newapiResponse=await apiResponse.data.map((set)=>({
                     _id:set._id,
