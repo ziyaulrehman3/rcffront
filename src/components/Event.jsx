@@ -44,7 +44,7 @@ export default function Event(){
 
     return (
         <div className='flex flex-col gap-10 py-12'>
-            <EventName name={'Kambal Bato Yojna'} tagLine={'Yahi to sahara hai sabka'}/>
+            <EventName name={'Kambal Bato Yojna'}/>
 
             <img className='w-[90%] flex items-center justify-center m-auto h-56 lg:h-96 object-cover rounded-lg' src={event.imageMain??'images/img.png'} alt='Main Img'/>
  

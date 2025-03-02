@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import axios from 'axios'
 
 import { RiLockPasswordLine } from "react-icons/ri";
 import { FaRegUserCircle } from "react-icons/fa";
@@ -7,18 +8,35 @@ import { FaRegUserCircle } from "react-icons/fa";
 
 export default function LoginPage(){
 
-    const [password,setPassword]=useState()
-    const [username,setUsername]=useState()
+    const [user,setUser]=useState({})
 
-    const passwordChange=(e)=>{
-        setPassword(e.target.value)
-        console.log(password)
+    const handelChange=(e)=>{
+        setUser({...user,[e.target.name]:e.target.value})
+        console.log(user)
     }
 
-    const usernameChange=(e)=>{
-        setUsername(e.target.value)
-        console.log(username)
-    }
+    
+
+    async function getAuth(){
+
+        
+        try{
+            const response = await axios.post('https://rcfback.onrender.com/login',user,{
+                headers:{
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                }
+            })
+
+            localStorage.setItem('token',response.data)
+
+            console.log(response.data)
+        }catch(err){
+            console.log(err);
+        }
+
+    } 
+
+    
 
     return (
         <div className='bg-[#D9D9D9] py-5'>
@@ -30,8 +48,7 @@ export default function LoginPage(){
                    <p className='text-md'>Username:</p>
                    <FaRegUserCircle className='absolute left-0.5 bottom-1'/>
 
-
-                   <input onChange={usernameChange} className='focus:outline-none w-full pl-5' placeholder='Type your password' type='text' name='username'/>
+                   <input onChange={handelChange} className='focus:outline-none w-full pl-5' placeholder='Type your password' type='text' name='username' value={user.username}/>
                    <hr/>
 
                 </div>
@@ -40,11 +57,11 @@ export default function LoginPage(){
                    <p className='text-md'>Password:</p>
                    <RiLockPasswordLine className='absolute left-0.5 bottom-1'/>
 
-                   <input onChange={passwordChange} className="focus:outline-none pl-5" placeholder='Type your password' type='password' name='password'/>
+                   <input onChange={handelChange} className="focus:outline-none pl-5" placeholder='Type your password' type='password' name='password' value={user.password}/>
                    <hr/>
                 </div>
 
-                <button className='bg-[#034C5B] text-white w-[80%] h-10 rounded-3xl font-semibold'>LOGIN</button>
+                <button onClick={getAuth} className='bg-[#034C5B] text-white w-[80%] h-10 rounded-3xl font-semibold'>LOGIN</button>
 
             </div>
         </div>
