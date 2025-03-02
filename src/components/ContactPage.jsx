@@ -21,9 +21,12 @@ function ContactUs() {
               },
             }
 
+            
+
         )
 
         console.log(response);
+        setForm({})
 
         sendMessage();
       }
