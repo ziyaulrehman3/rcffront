@@ -13,7 +13,6 @@
     "react-router-dom": "^7.2.0",
     "react-scripts": "5.0.1"
   },
-  "proxy": "https://rcfback.onrender.com",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

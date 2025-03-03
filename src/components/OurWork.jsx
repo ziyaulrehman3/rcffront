@@ -19,7 +19,7 @@ export default function OurWork(){
         const fetchEvent=async ()=>{
 
             try{
-                const apiResponse=await axios.get('/getAllEvents')
+                const apiResponse=await axios.get('https://rcfback.onrender.com/getAllEvents')
                 
                 const tempRes=apiResponse.data
                 console.log(tempRes)
