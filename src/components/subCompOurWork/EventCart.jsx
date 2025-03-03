@@ -6,7 +6,7 @@ export default function EventCart({title,date,location,desc,eventId,image,design
     
     return (
 
-<div className={`w-full ${design?'bg-[#D9D9D9]':'bg-white'} flex justify-center sm:h-96`}>
+<div className={`w-full ${design?'bg-gray-100':'bg-white'} flex justify-center sm:h-96`}>
        
         <div className={`w-[95%] lg:w-[75%] flex flex-col-reverse  ${design?'sm:flex-row':'sm:flex-row-reverse'} justify-between text-base lg:h-74 items-center gap-5 sm:gap-0 my-12 `}>
             <div className='w-[95%] lg:w-[50%] flex flex-col gap-2'>

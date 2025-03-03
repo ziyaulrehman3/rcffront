@@ -44,11 +44,11 @@ export default function Event(){
 
     return (
         <div className='flex flex-col gap-10 py-12'>
-            <EventName name={'Kambal Bato Yojna'}/>
+            <EventName name={event.eventName}/>
 
             <img className='w-[90%] flex items-center justify-center m-auto h-56 lg:h-96 object-cover rounded-lg' src={event.imageMain??'images/img.png'} alt='Main Img'/>
  
-             <div className='bg-[#E7E7E7] flex flex-col gap-10 pt-12 justify-center'>
+             <div className='bg-gray-100 flex flex-col gap-10 pt-12 justify-center'>
                  <EventContent story={event.story}/>
 
                  <EventDetails details={[event.sDate,event.eDate,event.members,event.location]}/>

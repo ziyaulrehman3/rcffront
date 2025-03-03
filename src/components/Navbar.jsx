@@ -14,7 +14,7 @@ const [isMenuOpen, setIsMenuOpen] = useState(true)
         <Link to='/' className="list-none w-142  text-center p-1  hover:bg-yellow-400 rounded-full pl-14 pr-14 pt-2 pb-2 mt-14
          transition-all cursor-pointer">Home</Link>
 
-         <Link to='#AboutUs' className="list-none w-142  text-center p-1  hover:bg-yellow-400 rounded-full pl-14 pr-14 pt-2 pb-2 
+         <Link to='/#AboutUs' className="list-none w-142  text-center p-1  hover:bg-yellow-400 rounded-full pl-14 pr-14 pt-2 pb-2 
          transition-all cursor-pointer">About Us</Link>
 
          <Link to='/OurWork' className="list-none w-142  text-center p-1  hover:bg-yellow-400 rounded-full pl-14 pr-14 pt-2 pb-2 
