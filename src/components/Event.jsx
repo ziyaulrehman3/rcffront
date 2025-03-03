@@ -21,7 +21,7 @@ export default function Event(){
 
             try{
                 const eventId=await localStorage.getItem('id');
-                const apiRes=await axios.get('/getEvent/' + String(eventId))
+                const apiRes=await axios.get('https://rcfback.onrender.com/getEvent/' + String(eventId))
                 setEvent(apiRes.data)
 
 
