@@ -18,13 +18,13 @@ const teamMembers = [
     name: 'Dr Mohammad Hamid', 
     role: 'Vice President', 
     description: 'Together, we can transform small efforts into powerful change.',
-    imageUrl: 'https://res.cloudinary.com/dqxjfn0qw/image/upload/v1740392932/Dr_mohd_Hamid_tyrrhp.jpg'
+    imageUrl: 'https://res.cloudinary.com/dqxjfn0qw/image/upload/v1740947809/Dr_mohd_Hamid_1_zzyink.jpg'
   },
 ];
 
 const TeamSection = () => {
   return (
-     <div className="flex flex-col lg:flex-row flex-wrap gap-8 justify-center shrink-0 items-center mb-[10%]">
+     <div className="flex flex-col lg:flex-row flex-wrap gap-8 justify-center shrink-0 items-center ">
       <div className="flex flex-col lg:flex-row flex-wrap gap-8 shrink-0 items-center justify-center ">
         {teamMembers.map((member, index) => (
           <TeamMember 
