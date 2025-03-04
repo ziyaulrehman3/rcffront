@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Card = () => {
+  const links = ["/Donation", "/Mission", "/TermsAndConditions"];
   const [cardContent, setCardContent] = useState([
     {
       image: process.env.PUBLIC_URL + "/images/cards/card1.png",
@@ -22,6 +24,7 @@ const Card = () => {
         "We uphold the highest standards of integrity, ensuring every donation is used ethically and effectively.",
     },
   ]);
+
 
   // Fetch data and update only the image field, preserving title and description
   useEffect(() => {
@@ -62,27 +65,31 @@ const Card = () => {
       <div className="flex gap-5 justify-start lg:justify-center overflow-x-auto w-full px-5">
         {cardContent.map((card, index) => (
           <div
-            className="flex-shrink-0 w-[300px] lg:w-[350px] flex flex-col gap-4 items-center justify-center"
+            className="flex-shrink-0 w-[300px] lg:w-[370px] flex flex-col gap-4 lg:gap-8 items-center justify-center"
             key={index}
           >
-            <div className="flex flex-col w-full h-[370px] lg:h-[430px] p-4 aspect-square rounded-md shadow-md">
-              <div className="w-full h-[400px] overflow-hidden">
-                <img
-                  src={card.image}
-                  alt={`Cards ${index + 1}`}
-                  className="w-full h-[200px] object-cover select-none rounded-sm shadow-md"
-                  draggable="false"
-                />
+            <Link to={links[index]} className="w-full">
+              <div className="flex flex-col w-full h-[370px] lg:h-[400px] p-4 aspect-square rounded-md shadow-md">
+                <div className="w-full h-[350px] overflow-hidden">
+                  <img
+                    src={card.image}
+                    alt={`Cards ${index + 1}`}
+                    className="w-96 h-[200px] object-cover select-none rounded-sm shadow-md"
+                    draggable="false"
+                  />
+                </div>
+                <div className="flex flex-col h-full justify-between items-">
+                  <h3 className="text-xl lg:text-3xl lg:mt-3 font-light font-shippori">
+                    {card.title}
+                  </h3>
+                  <div className="flex flex-col h-full justify-center gap-2 overflow-hidden">
+                    <p className="text-[13px] tracking-widest text-gray-400 font-poppins">
+                      {card.description}
+                    </p>
+                  </div>
+                </div>
               </div>
-              <h3 className="mt-5 lg:text-2xl lg:mt-3 font-semibold font-shippori">
-                {card.title}
-              </h3>
-              <div className="flex flex-col h-full justify-center gap-2 overflow-hidden">
-                <p className="text-[13px] tracking-widest text-gray-400 font-poppins">
-                  {card.description}
-                </p>
-              </div>
-            </div>
+            </Link>
           </div>
         ))}
       </div>

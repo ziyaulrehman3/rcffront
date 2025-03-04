@@ -4,11 +4,7 @@ import { Icon } from "@iconify/react";
 import axios from "axios";
 
 function Carousel() {
-  const [images, setImages] = useState([
-    process.env.PUBLIC_URL + "/images/carousel/carouselLeft.png",
-    "https://res.cloudinary.com/dqxjfn0qw/image/upload/v1740350545/fxmlfm78ale4rcpzbsoy.png",
-    process.env.PUBLIC_URL + "/images/carousel/carouselRight.png",
-  ]);
+  const [images, setImages] = useState([]);
   const [imagesLoaded, setImagesLoaded] = useState(false);
   
   const centerImageRef = useRef(null);
@@ -23,7 +19,15 @@ function Carousel() {
           const secondObj = response.data[1];
           // If secondObj.images is an array, set it in state
           if (Array.isArray(secondObj.images)) {
-            setImages(secondObj.images);
+            const apiImages = secondObj.images;
+            // Take exactly 3 images, cycling through available one if needed 
+            const carouselImages = [
+              apiImages[0 % apiImages.length],
+              apiImages[1 % apiImages.length],
+              apiImages[2 % apiImages.length]
+            ]
+            //Setting the 3 images in the setImages variable 
+            setImages(carouselImages);
             // Reset the loaded state when we get new images
             setImagesLoaded(false);
           }
