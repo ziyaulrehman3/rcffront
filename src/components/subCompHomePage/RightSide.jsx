@@ -5,7 +5,7 @@ import Hope from './Hope';
 
 export default function RightSide() {
   return (
-    <div className="flex flex-col items-start w-full lg:w-1/2 h-auto lg:h-[650px] gap-0">
+    <div className="flex flex-col items-start w-full lg:w-[54%] h-full lg:h-full gap-0">
       <SmilingChild />
       <Nurturing />
       <Hope />
