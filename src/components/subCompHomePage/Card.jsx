@@ -79,7 +79,7 @@ const Card = () => {
                   />
                 </div>
                 <div className="flex flex-col h-full justify-between items-">
-                  <h3 className="text-xl lg:text-3xl lg:mt-3 font-light font-shippori">
+                  <h3 className="text-xl lg:text-2xl lg:mt-3 font-semibold font-shippori">
                     {card.title}
                   </h3>
                   <div className="flex flex-col h-full justify-center gap-2 overflow-hidden">
