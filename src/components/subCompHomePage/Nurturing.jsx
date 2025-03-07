@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function Nurturing() {
   return (
-    <div className="w-full rounded-[5px] overflow-hidden relative h-[30%]">
+    <div className="w-full rounded-none md:rounded-[5px] overflow-hidden relative h-[30%]">
       {/* Image */}
       <div className="w-full h-full">
         <img

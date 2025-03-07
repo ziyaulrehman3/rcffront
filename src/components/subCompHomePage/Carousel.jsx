@@ -36,6 +36,13 @@ function Carousel() {
       .catch((error) => console.error("Error fetching images:", error));
   }, []);
 
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      handleRightClick();
+    }, 3000)
+    return () => clearInterval(intervalId);
+  }, []);
+
   const handleLeftClick = () => {
     // Rotate to the left: last image becomes first
     setImages((prevImages) => [prevImages[2], prevImages[0], prevImages[1]]);
@@ -81,6 +88,7 @@ function Carousel() {
             }`}
           >
             <img
+              onClick={handleRightClick}
               src={image}
               alt={`Slide ${index + 1}`}
               draggable="false"

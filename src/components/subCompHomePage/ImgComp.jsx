@@ -5,11 +5,11 @@ export default function ImgComp() {
      
       {/* Image Component */}
 
-       <img className='h-full w-full object-cover ' src='https://res.cloudinary.com/dqxjfn0qw/image/upload/v1740470337/boy_bemvau.jpg' alt='Boy'/>
+       <img className='h-[500px] md:h-[600px] lg:h-[100%] sm:w-full object-cover' src='https://res.cloudinary.com/dqxjfn0qw/image/upload/v1740470337/boy_bemvau.jpg' alt='Boy'/>
 
         {/* Gradient Overlay */}
         <div
-          className="h-full w-full absolute top-0 rounded-[5px] opacity-80"
+          className="h-full w-full absolute top-0 rounded-none md:rounded-[5px]  opacity-80"
           style={{
             background:
               'linear-gradient(to bottom, rgba(21, 144, 174,0.6) 0%, rgba(9, 60, 72,0.5) 100%)',

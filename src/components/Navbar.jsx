@@ -7,23 +7,23 @@ const [isMenuOpen, setIsMenuOpen] = useState(true)
 
   return (
     <div className="w-full h-full z-50 relative">
-      <header className="lg: flex z-50 justify-between items-center bg-white text-black py-6 px-10 shadow-2xl">
+      <header className="lg: flex z-50 justify-between items-center bg-white text-black py-6 px-2 lg:px-10 shadow-2xl h-20">
       {!isMenuOpen && (
-        <div className={`absolute xl:hidden shadow-2xl top-24 left-0 w-full bg-white flex flex-col items-center gap-6 font-semibold text-lg transform transition-transform `}>
+        <div className={`absolute xl:hidden shadow-2xl top-20 left-0 w-full bg-white flex flex-col items-center gap-6 font-semibold text-lg transform transition-transform`}>
         
-        <Link to='/' className="list-none w-142  text-center p-1  hover:bg-yellow-400 rounded-full pl-14 pr-14 pt-2 pb-2 mt-14
+        <Link to='/' onClick={()=>setIsMenuOpen(!isMenuOpen)} className="list-none w-142  text-center p-1  hover:bg-yellow-400 rounded-full pl-14 pr-14 pt-2 pb-2 mt-14
          transition-all cursor-pointer">Home</Link>
 
-         <Link to='/#AboutUs' className="list-none w-142  text-center p-1  hover:bg-yellow-400 rounded-full pl-14 pr-14 pt-2 pb-2 
+         <Link to='/#AboutUs' onClick={()=>setIsMenuOpen(!isMenuOpen)} className="list-none w-142  text-center p-1  hover:bg-yellow-400 rounded-full pl-14 pr-14 pt-2 pb-2 
          transition-all cursor-pointer">About Us</Link>
 
-         <Link to='/OurWork' className="list-none w-142  text-center p-1  hover:bg-yellow-400 rounded-full pl-14 pr-14 pt-2 pb-2 
+         <Link to='/OurWork' onClick={()=>setIsMenuOpen(!isMenuOpen)} className="list-none w-142  text-center p-1  hover:bg-yellow-400 rounded-full pl-14 pr-14 pt-2 pb-2 
          transition-all cursor-pointer">Our Work</Link>
 
-         <Link to='/Donation' className="list-none w-142  text-center p-1  hover:bg-yellow-400 rounded-full pl-14 pr-14 pt-2 pb-2 
+         <Link to='/Donation' onClick={()=>setIsMenuOpen(!isMenuOpen)} className="list-none w-142  text-center p-1  hover:bg-yellow-400 rounded-full pl-14 pr-14 pt-2 pb-2 
          transition-all cursor-pointer">Donation</Link>
 
-         <Link to='/ContactUs' className="list-none w-142  text-center p-1  hover:bg-yellow-400 rounded-full pl-14 pr-14 pt-2 pb-2 mb-14
+         <Link to='/ContactUs' onClick={()=>setIsMenuOpen(!isMenuOpen)} className="list-none w-142  text-center p-1  hover:bg-yellow-400 rounded-full pl-14 pr-14 pt-2 pb-2 mb-14
          transition-all cursor-pointer">Contact Us</Link>
       </div>
       )}
@@ -64,7 +64,7 @@ const [isMenuOpen, setIsMenuOpen] = useState(true)
        
       
          
-         <a href="./logo"><img src='' alt="" className="w-20 hover:scale-105 transition-all"/></a>
+         <a href="/"><img src='https://res.cloudinary.com/dqxjfn0qw/image/upload/c_crop,w_1850,h_1100/v1741309125/1000018788_spgndy.png' alt="" className="w-20 hover:scale-105 transition-all"/></a>
 
          <ul className="hidden xl:flex items-center gap-12 font-semibold text-base ">
           <li className="p-1 cursor-pointer"><Link to='/'>Home</Link></li>

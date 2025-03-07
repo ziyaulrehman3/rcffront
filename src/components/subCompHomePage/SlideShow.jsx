@@ -30,7 +30,7 @@ function SlideShow() {
   }, [slideImages]);
 
   return (
-    <div className="SlideShow-Component parent h-[45vh] sm:h-[60vh] lg:h-[80vh] xl:h-[85vh] -z-50">
+    <section className="SlideShow-Component parent h-[45vh] sm:h-[60vh] lg:h-[80vh] xl:h-[85vh]">
       <div className="relative w-full h-full overflow-hidden">
         <div className="h-full w-full absolute">
           {slideImages.map((item, index) => (
@@ -46,7 +46,7 @@ function SlideShow() {
           ))}
           {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white gap-4 p-8 bg-black bg-opacity-60">
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white gap-4 p-8">
             <p className="text-[11px] md:text-base md:font-bold -tracking-tight font-poppins">
               Reach to Care Foundation Trust
             </p>
@@ -63,7 +63,7 @@ function SlideShow() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

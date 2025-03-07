@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
-// If you're already using @iconify/react in your project:
 
 const Footer = () => {
-  const [isAboutUsOpen, setIsAboutUsOpen] = useState(false);
-  const [isLegalPolicyOpen, setIsLegalPolicyOpen] = useState(false);
-  const [isOurWorkOpen, setIsOurWorkOpen] = useState(false);
-  const [isSupportUsOpen, setIsSupportUsOpen] = useState(false);
+  // This state holds the currently open section (e.g. "about", "legal", "work", "support")
+  const [openSection, setOpenSection] = useState(null);
+
+  const toggleSection = (section) => {
+    setOpenSection((prevSection) => (prevSection === section ? null : section));
+  };
 
   return (
     <div className="bg-black gap-8 text-white flex flex-col justify-between p-10">
@@ -15,40 +16,58 @@ const Footer = () => {
         {/* About Us */}
         <div className="section-header flex flex-col gap-2">
           <h2
-            onClick={() => setIsAboutUsOpen(!isAboutUsOpen)}
-            className="text flex items-center justify-between cursor-pointer sm:cursor-default"
+            onClick={() => toggleSection("about")}
+            className="flex items-center justify-between cursor-pointer sm:cursor-default"
           >
             <span className="text-lg font-semibold -tracking-tighter">
               About Us
             </span>
             <Icon
-              icon={isAboutUsOpen ? "bx:chevron-up" : "bx:chevron-down"}
+              icon={openSection === "about" ? "bx:chevron-up" : "bx:chevron-down"}
               className="ml-2 w-4 h-4 sm:hidden"
             />
           </h2>
-          {/* Links for large screens */}
+          {/* Large screens */}
           <div className="hidden sm:block">
-            <Link to="/OurStory" className="text-gray-300 font-semibold hover:text-gray-50   tracking-widest hover:underline cursor-pointer block my-3">
+            <Link
+              to="/OurStory"
+              className="text-gray-300 font-semibold hover:text-gray-50 tracking-widest hover:underline cursor-pointer block my-3"
+            >
               Our Story
             </Link>
-            <Link  to="/OurTeam" className="text-gray-300 font-semibold hover:text-gray-50   tracking-widest hover:underline cursor-pointer block my-3">
+            <Link
+              to="/OurTeam"
+              className="text-gray-300 font-semibold hover:text-gray-50 tracking-widest hover:underline cursor-pointer block my-3"
+            >
               Our Team
             </Link>
-            <Link  to="/Mission" className="text-gray-300 font-semibold hover:text-gray-50   tracking-widest hover:underline cursor-pointer block my-3">
+            <Link
+              to="/Mission"
+              className="text-gray-300 font-semibold hover:text-gray-50 tracking-widest hover:underline cursor-pointer block my-3"
+            >
               Mission and Vision
             </Link>
           </div>
-          {/* Toggle for small screens */}
+          {/* Small screens */}
           <div className="sm:hidden">
-            {isAboutUsOpen && (
+            {openSection === "about" && (
               <>
-                <Link to="/OurStory" className="text-gray-300 font-semibold hover:text-gray-50   tracking-widest hover:underline cursor-pointer block my-3">
+                <Link
+                  to="/OurStory"
+                  className="text-gray-300 font-semibold hover:text-gray-50 tracking-widest hover:underline cursor-pointer block my-3"
+                >
                   Our Story
                 </Link>
-                <Link  to="/OurTeam" className="text-gray-300 font-semibold hover:text-gray-50   tracking-widest hover:underline cursor-pointer block my-3">
+                <Link
+                  to="/OurTeam"
+                  className="text-gray-300 font-semibold hover:text-gray-50 tracking-widest hover:underline cursor-pointer block my-3"
+                >
                   Our Team
                 </Link>
-                <Link to="/Mission" className="text-gray-300 font-semibold hover:text-gray-50   tracking-widest hover:underline cursor-pointer block my-3">
+                <Link
+                  to="/Mission"
+                  className="text-gray-300 font-semibold hover:text-gray-50 tracking-widest hover:underline cursor-pointer block my-3"
+                >
                   Mission and Vision
                 </Link>
               </>
@@ -59,38 +78,56 @@ const Footer = () => {
         {/* Legal Policies */}
         <div className="section-header flex flex-col gap-2">
           <h2
-            onClick={() => setIsLegalPolicyOpen(!isLegalPolicyOpen)}
+            onClick={() => toggleSection("legal")}
             className="flex items-center justify-between cursor-pointer sm:cursor-default"
           >
             <span className="text-lg font-semibold -tracking-tighter">
               Legal Policies
             </span>
             <Icon
-              icon={isLegalPolicyOpen ? "bx:chevron-up" : "bx:chevron-down"}
+              icon={openSection === "legal" ? "bx:chevron-up" : "bx:chevron-down"}
               className="ml-2 w-4 h-4 sm:hidden"
             />
           </h2>
           <div className="hidden sm:block">
-            <Link to="/TermsAndConditions" className="text-gray-300 font-semibold hover:text-gray-50   tracking-widest hover:underline cursor-pointer block my-3">
+            <Link
+              to="/TermsAndConditions"
+              className="text-gray-300 font-semibold hover:text-gray-50 tracking-widest hover:underline cursor-pointer block my-3"
+            >
               Terms & Conditions
             </Link>
-            <Link to="/PrivacyPolicies" className="text-gray-300 font-semibold hover:text-gray-50   tracking-widest hover:underline cursor-pointer block my-3">
+            <Link
+              to="/PrivacyPolicies"
+              className="text-gray-300 font-semibold hover:text-gray-50 tracking-widest hover:underline cursor-pointer block my-3"
+            >
               Privacy Policies
             </Link>
-            <Link to="/RefundCancellation" className="text-gray-300 font-semibold hover:text-gray-50   tracking-widest hover:underline cursor-pointer block my-3">
+            <Link
+              to="/RefundCancellation"
+              className="text-gray-300 font-semibold hover:text-gray-50 tracking-widest hover:underline cursor-pointer block my-3"
+            >
               Refund & Cancellation Policies
             </Link>
           </div>
           <div className="sm:hidden">
-            {isLegalPolicyOpen && (
+            {openSection === "legal" && (
               <>
-                <Link to="/TermsAndConditions" className="text-gray-300 font-semibold hover:text-gray-50   tracking-widest hover:underline cursor-pointer block my-3">
+                <Link
+                  to="/TermsAndConditions"
+                  className="text-gray-300 font-semibold hover:text-gray-50 tracking-widest hover:underline cursor-pointer block my-3"
+                >
                   Terms & Conditions
                 </Link>
-                <Link  to="/PrivacyPolicies" className="text-gray-300 font-semibold hover:text-gray-50   tracking-widest hover:underline cursor-pointer block my-3">
+                <Link
+                  to="/PrivacyPolicies"
+                  className="text-gray-300 font-semibold hover:text-gray-50 tracking-widest hover:underline cursor-pointer block my-3"
+                >
                   Privacy Policies
                 </Link>
-                <Link  to="/RefundCancellation" className="text-gray-300 font-semibold hover:text-gray-50   tracking-widest hover:underline cursor-pointer block my-3">
+                <Link
+                  to="/RefundCancellation"
+                  className="text-gray-300 font-semibold hover:text-gray-50 tracking-widest hover:underline cursor-pointer block my-3"
+                >
                   Refund & Cancellation Policies
                 </Link>
               </>
@@ -101,29 +138,33 @@ const Footer = () => {
         {/* Our Work */}
         <div className="section-header flex flex-col gap-2">
           <h2
-            onClick={() => setIsOurWorkOpen(!isOurWorkOpen)}
+            onClick={() => toggleSection("work")}
             className="flex items-center justify-between cursor-pointer sm:cursor-default"
           >
             <span className="text-lg font-semibold -tracking-tighter">
               Our Work
             </span>
             <Icon
-              icon={isOurWorkOpen ? "bx:chevron-up" : "bx:chevron-down"}
+              icon={openSection === "work" ? "bx:chevron-up" : "bx:chevron-down"}
               className="ml-2 w-4 h-4 sm:hidden"
             />
           </h2>
           <div className="hidden sm:block">
-            <Link  to="/OurWork" className="text-gray-300 font-semibold hover:text-gray-50   tracking-widest hover:underline cursor-pointer block my-3">
+            <Link
+              to="/OurWork"
+              className="text-gray-300 font-semibold hover:text-gray-50 tracking-widest hover:underline cursor-pointer block my-3"
+            >
               Our Work
             </Link>
           </div>
           <div className="sm:hidden">
-            {isOurWorkOpen && (
-              <>
-                <Link  to="/OurWork" className="text-gray-300 font-semibold hover:text-gray-50   tracking-widest hover:underline cursor-pointer block my-3">
-                  Our Work
-                </Link>
-              </>
+            {openSection === "work" && (
+              <Link
+                to="/OurWork"
+                className="text-gray-300 font-semibold hover:text-gray-50 tracking-widest hover:underline cursor-pointer block my-3"
+              >
+                Our Work
+              </Link>
             )}
           </div>
         </div>
@@ -131,29 +172,33 @@ const Footer = () => {
         {/* Support Us */}
         <div className="section-header flex flex-col gap-2">
           <h2
-            onClick={() => setIsSupportUsOpen(!isSupportUsOpen)}
+            onClick={() => toggleSection("support")}
             className="flex items-center justify-between cursor-pointer sm:cursor-default"
           >
             <span className="text-lg font-semibold -tracking-tighter">
               Support Us
             </span>
             <Icon
-              icon={isSupportUsOpen ? "bx:chevron-up" : "bx:chevron-down"}
+              icon={openSection === "support" ? "bx:chevron-up" : "bx:chevron-down"}
               className="ml-2 w-4 h-4 sm:hidden"
             />
           </h2>
           <div className="hidden sm:block">
-            <Link  to="/Donation" className="text-gray-300 font-semibold hover:text-gray-50   tracking-widest hover:underline cursor-pointer block my-3">
+            <Link
+              to="/Donation"
+              className="text-gray-300 font-semibold hover:text-gray-50 tracking-widest hover:underline cursor-pointer block my-3"
+            >
               Donation
             </Link>
           </div>
           <div className="sm:hidden">
-            {isSupportUsOpen && (
-              <>
-                <Link  to="/Donation" className="text-gray-300 font-semibold hover:text-gray-50   tracking-widest hover:underline cursor-pointer block my-3">
-                  Donation
-                </Link>
-              </>
+            {openSection === "support" && (
+              <Link
+                to="/Donation"
+                className="text-gray-300 font-semibold hover:text-gray-50 tracking-widest hover:underline cursor-pointer block my-3"
+              >
+                Donation
+              </Link>
             )}
           </div>
         </div>
@@ -168,34 +213,43 @@ const Footer = () => {
           }}
           className="cursor-pointer"
         >
-          <Icon
-            icon="entypo-social:facebook-with-circle"
-            className="w-9 h-9 hover:text-[#E3501F] transition-colors"
+          <img
+            className="w-8 h-8 object-cover"
+            src="https://img.icons8.com/?size=100&id=13912&format=png&color=000000"
+            alt="facebook-icon"
           />
         </Link>
         <Link
           to="/Instagram"
           onClick={(e) => {
             e.preventDefault();
-            window.open("https://www.instagram.com/trustrcf?utm_source=qr&igsh=cGN1ZTM3OHdkZjl1", "_blank");
+            window.open(
+              "https://www.instagram.com/trustrcf?utm_source=qr&igsh=cGN1ZTM3OHdkZjl1",
+              "_blank"
+            );
           }}
           className="cursor-pointer"
         >
-          <Icon
-            icon="entypo-social:instagram"
-            className="w-9 h-9 hover:text-[#E3501F] transition-colors"
+          <img
+            className="w-8 h-8 object-cover"
+            src="https://img.icons8.com/?size=100&id=32323&format=png&color=000000"
+            alt="instagram-icon"
           />
         </Link>
         <Link
           onClick={(e) => {
             e.preventDefault();
-            window.open("https://mail.google.com/mail/?view=cm&fs=1&to=rcft044@gmail.com", "_blank");
+            window.open(
+              "https://mail.google.com/mail/?view=cm&fs=1&to=rcft044@gmail.com",
+              "_blank"
+            );
           }}
           className="cursor-pointer"
         >
-          <Icon
-            icon="ic:baseline-email"
-            className="w-9 h-9 hover:text-[#E3501F] transition-colors"
+          <img
+            className="w-8 h-8 object-cover"
+            src="https://img.icons8.com/?size=100&id=19408&format=png&color=000000"
+            alt="mail-icon"
           />
         </Link>
       </div>

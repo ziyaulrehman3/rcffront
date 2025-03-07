@@ -12,7 +12,7 @@ const SmilingChild = () => {
 
       {/* Smiling Girl Image */}
       <img
-        src="https://res.cloudinary.com/dqxjfn0qw/image/upload/v1740470307/Intersect_yquqkd.png"
+        src="https://res.cloudinary.com/dqxjfn0qw/image/upload/t_child/v1740470307/Intersect_yquqkd.png"
         alt="Smiling Girl"
         className=" z-10 w-[280px] md:w-[320px] lg:w-auto max-h-[300px] object-contain mx-auto"
       />
