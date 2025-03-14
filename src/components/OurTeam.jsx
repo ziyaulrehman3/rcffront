@@ -3,6 +3,8 @@ import TeamSection from './subCompOurTeam/TeamSection';
 import DonateSection from './subCompOurTeam/DonateSection';
 import NewTeamSection from './subCompOurTeam/NewTeamSection';
 import MainImgFrame from './subCompOurTeam/imageframe';
+import MoreMembers from './subCompOurTeam/MoreMembers';
+import MoreTeam from './subCompOurTeam/MoreTeam';
 
 
 function App() {
@@ -13,6 +15,8 @@ function App() {
         <TeamSection/>
         <DonateSection/>
         <NewTeamSection/>
+        <MoreMembers/>
+        <MoreTeam/>
     </div>
   );
 }

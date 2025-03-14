@@ -10,18 +10,18 @@ export default function EventDetails({details}){
     useEffect(()=>{
 
         const months={
-            1:'January',
-            2:'Febuary',
-            3:'March',
-            4:'April',  
-            5:'May',    
-            6:'June',
-            7:'July',
-            8:'August',
-            9:'September',
-            10:'October',
-            11:'November',
-            12:'December',
+            '01':'January',
+            '02':'Febuary',
+            '03':'March',
+            '04':'April',  
+            '05':'May',    
+            '06':'June',
+            '07':'July',
+            '08':'August',
+            '09':'September',
+            '10':'October',
+            '11':'November',
+            '12':'December',
         }
         if(details){
             setSDate(String(details[0]).slice(8,10) + ' ' + months[String(details[0]).slice(5,7)] + ' ' + String(details[0]).slice(0,4))

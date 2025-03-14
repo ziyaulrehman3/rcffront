@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { href, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 
 const Footer = () => {
@@ -223,7 +223,7 @@ const Footer = () => {
         >
           <img
             className="w-8 p-1 bg-white rounded-md hover:bg-blue-500 transition-all ease-linear"
-            src="https://res.cloudinary.com/dqxjfn0qw/image/upload/v1741407276/facebook_tn6cnj.png"
+            src="https://res.cloudinary.com/dqxjfn0qw/image/upload/v1741407276/mail_fvk4nk.png"
             alt="instagram-icon"
           />
         </Link>
@@ -261,17 +261,17 @@ const Footer = () => {
           />
         </Link>
       </div>
-      <a
-        className="w-full"
-        href="https://zrehmaninfotech.onrender.com"
-        target="_blank"
-      >
-        <div className="font-poppins flex justify-end items-center gap-1">
+      <div className="font-poppins flex justify-end items-center">
+        <Link 
+        onClick={(e) => {
+          e.preventDefault();
+          window.open("zrehmaninfotech.onrender.com", "_blank")
+        }}>
           <p className="">Developed with</p>
-          <Icon icon="twemoji:heart-suit" width="20" height="20" />
+          <Icon icon="twemoji:heart-suit" width="36" height="36" />
           <p>by Z-Rehman Infotech</p>
-        </div>
-      </a>
+        </Link>
+      </div>
     </div>
   );
 };

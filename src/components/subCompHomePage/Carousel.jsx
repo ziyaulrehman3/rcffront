@@ -6,8 +6,8 @@ import axios from "axios";
 function Carousel() {
   const [images, setImages] = useState([]);
   const [imagesLoaded, setImagesLoaded] = useState(false);
-  
   const centerImageRef = useRef(null);
+  const autoSlideTimeout = useRef(null);
 
   // Fetch the second object's images field from the API
   useEffect(() => {
@@ -36,12 +36,21 @@ function Carousel() {
       .catch((error) => console.error("Error fetching images:", error));
   }, []);
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
+  const resetAutoSlide = () => {
+    if(autoSlideTimeout.current){
+      clearInterval(autoSlideTimeout.current);
+    }
+    autoSlideTimeout.current = setTimeout(() => {
       handleRightClick();
-    }, 3000)
-    return () => clearInterval(intervalId);
-  }, []);
+    }, 3000);
+  };
+
+  useEffect(() => {
+    if(images.length){
+      resetAutoSlide();
+    }
+    return () => clearInterval(autoSlideTimeout.current);
+  }, [images]);
 
   const handleLeftClick = () => {
     // Rotate to the left: last image becomes first

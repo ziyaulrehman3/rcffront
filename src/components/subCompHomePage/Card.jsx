@@ -48,7 +48,7 @@ const Card = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center w-full my-14">
+    <div className="flex flex-col items-center justify-center w-full mb-28">
       <div className="text-center flex flex-col items-center gap-4 md:m-32 my-8">
         <h2 className="text-xl -tracking-tighter font-shippori">
           Our Impactful Services
@@ -62,7 +62,7 @@ const Card = () => {
         </p>
       </div>
 
-      <div className="flex gap-5 justify-start h-[410px] lg:justify-center items-center overflow-x-auto w-full px-5">
+      <div className="flex gap-5 justify-start h-[420px] lg:justify-center items-center overflow-x-auto w-full px-5">
         {cardContent.map((card, index) => (
           <div
             className="flex-shrink-0 w-[300px] border-2 border-solid lg:w-[370px] flex flex-col gap-4 lg:gap-8 items-center justify-center"

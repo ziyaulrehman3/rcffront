@@ -54,7 +54,7 @@ function ContactUs() {
                     <div className="flex space-x-4 mt-10 w-60">
                        <a href="https://rcft044@gmail.com" target='-blank'><img src='https://res.cloudinary.com/dqxjfn0qw/image/upload/v1740355085/ytqccv64ekfzesegwap1.jpg' alt="" className='w-14'/></a>
                        <a href="https://x.com/TrustRcf?t=KYkn1lYzQxKTU7-6nwTrMw&s=08 " target='-blank'><img src='https://res.cloudinary.com/dqxjfn0qw/image/upload/v1740355085/ytqccv64ekfzesegwap1.jpg' alt="" className='w-14'/></a>
-                       <a href="https://wa.me/918505895489" target='-blank'><img src='https://res.cloudinary.com/dqxjfn0qw/image/upload/v1740355085/ytqccv64ekfzesegwap1.jpg' alt="" className='w-14'/></a>
+                       <a href="https://wa.me/918958448044" target='-blank'><img src='https://res.cloudinary.com/dqxjfn0qw/image/upload/v1740355085/ytqccv64ekfzesegwap1.jpg' alt="" className='w-14'/></a>
                        <a href="https://www.facebook.com/share/1BcZnFZ1cK/" target='-blank'><img src='https://res.cloudinary.com/dqxjfn0qw/image/upload/v1740355085/ytqccv64ekfzesegwap1.jpg' alt="" className='w-12'/></a>
                        <a href="https://www.instagram.com/trustrcf/#" target='-blank'><img src='https://res.cloudinary.com/dqxjfn0qw/image/upload/v1740355085/ytqccv64ekfzesegwap1.jpg' alt="" className='w-12'/></a>
                     </div>

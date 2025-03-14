@@ -1,50 +1,19 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useState } from "react";
 
 function Donation() {
   const [selectedOption, setSelectedOption] = useState("upi");
-  const [images, setImages] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleOptionChange = (option) => {
     setSelectedOption(option);
   };
 
-  // Fetch slideshow images from an API on mount.
-  useEffect(() => {
-    axios
-      .get("https://rcfback.onrender.com/getSlideShow") // Update URL accordingly
-      .then((response) => {
-        // assuming the response is an array of image URLs
-        if (Array.isArray(response.data)) {
-          setImages(response.data.map((item) => item.image));
-        }
-        console.log(response.data);
-      })
-      .catch((error) =>
-        console.error("Error fetching donation images:", error)
-      );
-  }, []);
-
-  // Auto-rotate images every 3 seconds
-  useEffect(() => {
-    if (images.length > 0) {
-      const interval = setInterval(() => {
-        setCurrentIndex((prevIndex) =>
-          prevIndex === images.length - 1 ? 0 : prevIndex + 1
-        );
-      }, 3000);
-      return () => clearInterval(interval);
-    }
-  }, [images]);
-
   return (
-    <div className="donation-page bg-[#D9D9D9] container mx-auto mt-8 w-full md:w-10/12 lg:w-8/12">
+    <div className="donation-page bg-[#D9D9D9] container mx-auto mt-8 w-11/12 md:w-10/12 lg:w-8/12">
       <div className="flex flex-col md:flex-row gap-4 p-10 md:p-0">
         {/* Left column: Image occupying 50% */}
         <div className="w-full md:w-1/2">
           <img
-            src={images[currentIndex]}
+            src="https://annamrita.org/wp-content/uploads/2023/02/5-ways-to-support-underprivileged-child-education.jpg"
             alt="Donation"
             className="aspect-square  w-full mx-auto h-full object-cover"
           />

@@ -1,7 +1,7 @@
 import React from 'react';
 export default function ContentComp({ setShowRightSide }) {
   return (
-    <div className="text-center lg:text-start flex flex-col w-full xl:gap-2 bg-white h-[35%]">
+    <div className="text-center lg:text-start flex flex-col w-full xl:gap-2 bg-white h-[35%] mb-4">
       <h2 className="text-3xl lg:text-4xl font-shippori text-purpleblack">About Us</h2>
       <p className="font-bold text-brickorange text-base lg:text-lg my-3">
         Compassion in Action, Change in Motion

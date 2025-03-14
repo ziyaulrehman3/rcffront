@@ -50,7 +50,7 @@ function SlideShow() {
             <p className="text-[11px] md:text-base md:font-bold -tracking-tight font-poppins">
               Reach to Care Foundation Trust
             </p>
-            <h1 className="lg:w-9/12 text-xl sm:text-2xl md:text-3xl lg:text-5xl sm:font-light text-shadow-md font-shippori">
+            <h1 className="lg:w-9/12 text-xl sm:text-2xl md:text-3xl lg:text-5xl sm:font-semibold  text-shadow-md font-shippori">
               Empowering Lives, Uplifting Communities, and Creating Lasting Change
             </h1>
             <p className="w-8/12 md:text-xl font-poppins text-center  md:text-md leading-relaxed md:leading-relaxed">
