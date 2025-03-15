@@ -24,9 +24,6 @@ export default function Event(){
                 const apiRes=await axios.get('https://rcfback.onrender.com/getEvent/' + String(eventId))
                 setEvent(apiRes.data)
 
-
-             
-
             
             }catch(err){
                 console.log(err)
