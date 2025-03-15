@@ -22,26 +22,25 @@ function Donation() {
         <div className="w-4/5 md:w-1/2 py-10 flex flex-col items-start justify-between px-4">
           <h2 className="text-2xl font-bold mb-4">Donate Now</h2>
           <div className="flex gap-4 mb-6">
+
             <button
               onClick={() => handleOptionChange("upi")}
-              className={`px-6 py-2 rounded-md ${
+              className={`py-2 rounded-md font-bold ${
                 selectedOption === "upi"
-                  ? "bg-blue-500 text-white font-bold transition-all ease-linear"
+                  ? "bg-blue-500 text-white  transition-all ease-linear"
                   : "bg-gray-300 text-black"
               }`}
-            >
-              UPI
-            </button>
+            >UPI</button>
+
             <button
               onClick={() => handleOptionChange("bank")}
-              className={`px-4 py-2 rounded-md ${
+              className={`py-2 rounded-md font-bold ${
                 selectedOption === "bank"
-                  ? "bg-blue-500 text-white font-bold transition-all ease-linear"
+                  ? "bg-blue-500 text-white transition-all ease-linear"
                   : "bg-gray-300 text-black"
               }`}
-            >
-              Bank
-            </button>
+            >Bank</button>
+
           </div>
 
           <div className="w-full  rounded-md h-2/3">

@@ -13,16 +13,17 @@ const Addimage = () => {
     if (!eventId) return setMessage("Enter an Event ID");
 
     try {
-      const res = await fetch(`https://rcfback.onrender.com/getevent?eventId=${eventId}`);
-      const data = await res.json();
+      const res = await axios.get(`https://rcfback.onrender.com/getEvent/${eventId}`);
+      
 
-      if (res.ok) {
-        setEventDetails(data);
+      if (res.data.images) {
+        setEventDetails(res.data.images);
         setMessage("");
       } else {
-        setEventDetails(null);
+        setEventDetails([]);
         setMessage("Event not found");
       }
+
     } catch {
       setMessage("Error fetching event details");
     }
@@ -31,24 +32,33 @@ const Addimage = () => {
  
   const handleImageUpload = async (e) => {
     e.preventDefault();
-    if (!eventId || !imageFile) return setMessage("Enter Event ID & select an image");
-
+    
+    if (!eventId || !imageFile) {
+      return setMessage("Enter Event ID & select an image");
+    }
+  
     const formData = new FormData();
     formData.append("file", imageFile);
-
+  
     try {
-      const res = await axios.post(`https://rcfback.onrender.com/addImage/${eventId}`,formData,{
-        'Authorization':`Bearer ${localStorage.getItem('token')}`,
-        'Content-Type':"multipart/form-data"
-        
-      })
-
-      const data = await res.json();
-      setMessage(data.message || "Upload successful");
-    } catch {
+      const res = await axios.post(
+        `https://rcfback.onrender.com/addEventImages/${eventId}`,
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+  
+      setMessage("Upload successfull");
+    } catch (error) {
+      console.error("Upload error:", error.response?.data || error.message);
       setMessage("Upload failed");
     }
   };
+  
 
   return (
     <div className="flex flex-col w-full gap-2 ml-10 min-h-screen rounded-xl p-4 bg-gray-100">
@@ -69,12 +79,17 @@ const Addimage = () => {
       </div>
 
       {/* Display Event Details */}
-      <div className="mt-4 p-4 w-full max-w-md">
+      <div className="mt-4 p-4 w-full">
+
+ 
         {eventDetails ? (
-          <>
-            <h3 className="text-lg font-semibold">{eventDetails.name}</h3>
-            <p className="text-gray-600">{eventDetails.description}</p>
-          </>
+          <div className='w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5'>{
+            eventDetails.map((ev)=>(
+              <img src={ev} className="w-64 h-72" alt=''/>
+            ))
+          }
+            
+          </div>
         ) : (
           <p className="text-gray-500">No event details available.</p>
         )}
@@ -90,7 +105,9 @@ const Addimage = () => {
             <p className="text-green-600 mt-2">Upload image</p>
           </div>
         </label>
+
         <input type="file" id="imageUpload" accept="image/*" onChange={(e) => setImageFile(e.target.files[0])} className="hidden" />
+        
         <button onClick={handleImageUpload} className="w-[150px] ml-4 mt-4 px-6 py-2 bg-yellow-400 rounded-lg">
          Upload Image
         </button>

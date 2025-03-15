@@ -34,9 +34,9 @@ export default function MissionAndVision() {
         </div>
       </div>
         <div className="w-10/12 flex flex-col items-center lg:flex-row mx-auto justify-around my-8 gap-4">
-          <img className="w-full lg:w-1/4 rounded-lg aspect-square object-cover" src="https://th.bing.com/th/id/OIP.dWyWrSbBEGBAeBDU9Obd-QHaFj?rs=1&pid=ImgDetMain" alt="smiling-kid-img" />
-          <img className="w-full lg:w-1/4 rounded-lg aspect-square object-cover" src="https://ofhsoupkitchen.org/wp-content/uploads/2021/07/image1.jpg" alt="meal-img" />
-          <img className="w-full lg:w-1/4 rounded-lg aspect-square object-cover" src="https://whereno1canreach.files.wordpress.com/2021/09/img-20210919-wa0000.jpg" alt="education-img" />
+          <img className="w-full md:w-1/4 rounded-lg aspect-square object-cover" src="https://th.bing.com/th/id/OIP.dWyWrSbBEGBAeBDU9Obd-QHaFj?rs=1&pid=ImgDetMain" alt="smiling-kid-img" />
+          <img className="w-full md:w-1/4 rounded-lg aspect-square object-cover" src="https://ofhsoupkitchen.org/wp-content/uploads/2021/07/image1.jpg" alt="meal-img" />
+          <img className="w-full md:w-1/4 rounded-lg aspect-square object-cover" src="https://whereno1canreach.files.wordpress.com/2021/09/img-20210919-wa0000.jpg" alt="education-img" />
         </div>
         <div className="my-8 flex items-center justify-center">
           <Link

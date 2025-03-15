@@ -61,8 +61,18 @@ function ContactUs() {
 
                 </div> 
      
-               <a href="./map"><img src='https://res.cloudinary.com/dqxjfn0qw/image/upload/v1740355085/ytqccv64ekfzesegwap1.jpg' alt="" className="mt-20 mb-8 w-full"/></a>
-          
+
+                <a 
+  href="https://maps.app.goo.gl/s1CstomnJtC5nALX8" 
+  target="-blank" 
+  rel="noopener noreferrer"
+>
+  <img 
+    src="https://res.cloudinary.com/dqxjfn0qw/image/upload/v1740355085/ytqccv64ekfzesegwap1.jpg" 
+    alt="Google Maps Location" 
+    className="mt-20 mb-8 w-full"
+  />
+</a>          
             </div>
       
           {/* Contact Form */}

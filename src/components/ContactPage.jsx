@@ -26,7 +26,12 @@ function ContactUs() {
         )
 
         console.log(response);
-        setForm({})
+        setForm({
+          name:'',
+          mobile:'',
+          msg:'',
+          email:''
+        })
 
         sendMessage();
       }
@@ -67,7 +72,7 @@ function ContactUs() {
             <p className="text-[#787878] font-poppins text-base  text-left">Have questions, feedback, or need assistance? Our team is here to help! Feel free to reach out using the details below.</p>
             
              {/* icon tags */}
-      <div className="flex space-x-4 mt-10 w-56">
+             <div className="flex space-x-4 mt-10 w-56">
               <a href="https://rcft044@gmail.com" target='-blank'><img src='./images/gmail.png' alt="" className='w-12'/></a>
               
               <a href="https://x.com/TrustRcf?t=KYkn1lYzQxKTU7-6nwTrMw&s=08 " target='-blank'><img src='./images/x.png' alt="" className='w-12 '/></a>
@@ -79,10 +84,14 @@ function ContactUs() {
               <a href="https://www.instagram.com/trustrcf/#" target='-blank'><img src='./images/instagram.png' alt="" className='w-12'/></a>
 
               </div>
+
               {/* Map */}
-              <div className='overflow-hidden display-block w-full object-cover rounded-xl mt-20 mb-8'>
-              <a href="./map"><img src='./images/map.png' alt="" className="hover:scale-110 duration-500 transition-transform  w-full"/></a>
-              </div>
+              <a href="https://maps.app.goo.gl/s1CstomnJtC5nALX8" target="_blank" >
+                  <div className='overflow-hidden display-block w-full object-cover rounded-xl mt-20 mb-8'>
+                    <img src='./images/map.png' alt="" className="hover:scale-110 duration-500 transition-transform  w-full"/>
+                  </div>
+              </a>
+
             </div>
             
                 {/* Contact Form */}

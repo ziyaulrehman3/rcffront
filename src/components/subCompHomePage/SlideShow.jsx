@@ -15,7 +15,9 @@ function SlideShow() {
           setSlideImages(response.data);
         }
       })
-      .catch((error) => console.error("Error fetching slideshow images:", error));
+      .catch((error) =>
+        console.error("Error fetching slideshow images:", error)
+      );
   }, []);
 
   // Auto-loop the slideshow
@@ -32,7 +34,7 @@ function SlideShow() {
   return (
     <section className="SlideShow-Component parent h-[45vh] sm:h-[60vh] lg:h-[80vh] xl:h-[85vh]">
       <div className="relative w-full h-full overflow-hidden">
-        <div className="h-full w-full absolute">
+        <div className="z-50 h-full w-full absolute">
           {slideImages.map((item, index) => (
             <img
               key={item._id}
@@ -45,18 +47,21 @@ function SlideShow() {
             />
           ))}
           {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[rgb(0,0,0,0.9)] via-[rgb(0,0,0,0.5)] to-[rgb(0,0,0,0.2)]"></div>
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white gap-4 p-8">
             <p className="text-[11px] md:text-base md:font-bold -tracking-tight font-poppins">
               Reach to Care Foundation Trust
             </p>
             <h1 className="lg:w-9/12 text-xl sm:text-2xl md:text-3xl lg:text-5xl sm:font-semibold  text-shadow-md font-shippori">
-              Empowering Lives, Uplifting Communities, and Creating Lasting Change
+              Empowering Lives, Uplifting Communities, and Creating Lasting
+              Change
             </h1>
             <p className="w-8/12 md:text-xl font-poppins text-center  md:text-md leading-relaxed md:leading-relaxed">
-              Reach to Care Foundation Trust empowers the underprivileged <span className="inline sm:hidden">Read More...</span>
+              Reach to Care Foundation Trust empowers the underprivileged{" "}
+              <span className="inline sm:hidden">Read More...</span>
               <span className="hidden sm:inline">
-                through healthcare, education, and social welfare, driven by transparency and trust.
+                through healthcare, education, and social welfare, driven by
+                transparency and trust.
               </span>
             </p>
             <JoinButtonComp />
