@@ -51,7 +51,7 @@ export default function Event(){
              <div className='bg-gray-100 flex flex-col gap-10 pt-12 justify-center'>
                  <EventContent story={event.story}/>
 
-                 <EventDetails details={[event.sDate,event.eDate,event.members,event.location]}/>
+                 <EventDetails details={[event.sDate,event.eDate,event.members,event.location,event._id]}/>
 
                  <EventImages images={event.images}/>
 

@@ -104,6 +104,8 @@ const UpdateSlideshow = () => {
       <div className="mb-8 flex flex-col items-center max-w-max p-6 rounded-lg">
         <UploadComp token={token} uploadUrl={"https://rcfback.onrender.com/addSlideShow"} />
       </div>
+
+      
     </div>
   );
 };

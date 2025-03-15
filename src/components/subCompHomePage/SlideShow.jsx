@@ -34,7 +34,7 @@ function SlideShow() {
   return (
     <section className="SlideShow-Component parent h-[45vh] sm:h-[60vh] lg:h-[80vh] xl:h-[85vh]">
       <div className="relative w-full h-full overflow-hidden">
-        <div className="z-50 h-full w-full absolute">
+        <div className="z-10 h-full w-full absolute">
           {slideImages.map((item, index) => (
             <img
               key={item._id}

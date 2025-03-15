@@ -6,6 +6,7 @@ export default function EventDetails({details}){
     const [eDate,setEDate]=useState([])
     const [location,setLocation]=useState([])
     const [members,setMembers]=useState([])
+    const [id,setId]=useState('')
 
     useEffect(()=>{
 
@@ -27,6 +28,7 @@ export default function EventDetails({details}){
             setSDate(String(details[0]).slice(8,10) + ' ' + months[String(details[0]).slice(5,7)] + ' ' + String(details[0]).slice(0,4))
             setEDate(String(details[0]).slice(8,10) + ' ' + months[String(details[0]).slice(5,7)] + ' ' + String(details[0]).slice(0,4))
             setLocation(details[3])
+            setId(details[4])
             
             let temp=details[2];
             if(temp){
@@ -60,6 +62,10 @@ export default function EventDetails({details}){
                       <p className='text-[#787878]'>{'From: ' + sDate}</p>
                       <p className='text-[#787878]'>{'To: ' + eDate}</p>
                  
+                      <span className='flex gap-2'>
+                         <p className='text-[#E3501F]'>Event Id:</p>
+                         <p className='text-[#787878]'>{id}</p>
+                     </span>
                  </div>
             </div>
       

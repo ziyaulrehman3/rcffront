@@ -100,7 +100,7 @@ const Addimage = () => {
         <label htmlFor="imageUpload" className="cursor-pointer">
           <div className="w-[180px] h-40 flex flex-col items-center justify-center bg-white shadow-lg rounded-lg border">
             <div className="w-20 h-20 rounded-full bg-blue-200 flex items-center justify-center">
-              <img src="/cloud-upload-icon.png" alt="Upload" className="w-10 h-10" />
+              <img src="https://res.cloudinary.com/dqxjfn0qw/image/upload/v1740955853/image_kxnuwj.png" alt="Upload" className="w-10 h-10" />
             </div>
             <p className="text-green-600 mt-2">Upload image</p>
           </div>
