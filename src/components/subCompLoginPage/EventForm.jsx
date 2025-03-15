@@ -62,7 +62,7 @@ export default function EventForm() {
     setMessage("Your event has been added!");
     setTimeout(() => setMessage(""), 3000);
     try {
-      const reqResponse = await axios.post('http://localhost:3000/addEvent', formData, {
+      const reqResponse = await axios.post('https://rcfback.onrender.com/addEvent', formData, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
           'Content-Type': 'application/json',
