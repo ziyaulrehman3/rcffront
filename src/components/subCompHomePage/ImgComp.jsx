@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 export default function ImgComp() {
   return (
     <div className=" w-full h-[65%] flex flex-col relative">
@@ -29,9 +30,7 @@ export default function ImgComp() {
     
               {/* Join Us Button */}
               
-              <button className="mt-8 px-6 py-2 tracking-[0.05em] font-medium text-white border-2 border-strokeyellow rounded-full">
-                Join Us
-              </button>
+              <Link to='/ContactUs' className='mt-8 px-6 py-2 tracking-[0.05em] font-medium text-white border-2 border-strokeyellow rounded-full'>Join Us</Link>
 
           </div>
           

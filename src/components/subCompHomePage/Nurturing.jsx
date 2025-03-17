@@ -22,7 +22,7 @@ export default function Nurturing() {
           Our mission is to uplift underprivileged communities through
           humanitarian aid, skill development, and social welfare initiatives.
         </p>
-        <Link to="/aboutus">
+        <Link to="/ContactUs">
           <button className="px-4 sm:px-5 py-1.5 sm:py-2 text-xs tracking-[0.05em] border-2 text-white border-strokeyellow rounded-full">
             Join Us
           </button>

@@ -35,6 +35,12 @@ const Sidebar = () => {
           </button>
         </li>
 
+        <li >
+          <button onClick={()=>localStorage.setItem('selected','addmainimg')} className="mb-8 block py-6 w-full hover:bg-[#253E52] hover:text-white font-semibold" >
+          Add Main Img
+          </button>
+        </li>
+
         <li className='mx-auto'>
         <a href='' >
           <button onClick={()=>localStorage.setItem('token','')} className="mb-8 block py-6 w-full hover:bg-[#253E52] hover:text-white font-semibold">

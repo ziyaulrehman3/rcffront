@@ -22,7 +22,7 @@ export default function Hope() {
           We stand with communities affected by disaster, providing urgent
           relief and long-term support.
         </p>
-        <Link to="/aboutus">
+        <Link to="/ContactUs">
           <button className="px-4 sm:px-5 py-1.5 sm:py-2 text-xs tracking-[0.05em] border-2 text-white border-strokeyellow rounded-full">
             Join Us
           </button>

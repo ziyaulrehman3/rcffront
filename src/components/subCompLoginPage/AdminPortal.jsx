@@ -6,6 +6,7 @@ import AdminNav from './AdminNav'
 import NewFile from './NewFIle'
 import AddThankingPerson from './AddThankingPerson'
 import Addimage from './Addimage'
+import MainImage from './MainImage'
 
 export const AdminPortal = () => {
 
@@ -44,7 +45,7 @@ export const AdminPortal = () => {
 
 
           {
-            (selected==='addevent')?<EventForm/>:((selected==='updateevent')?<UpdateEvent/>:(selected==='updateslideshow')?<NewFile/>:(selected==='addimage')?<Addimage/>:<AddThankingPerson/>)
+            (selected==='addevent')?<EventForm/>:((selected==='updateevent')?<UpdateEvent/>:(selected==='updateslideshow')?<NewFile/>:(selected==='addimage')?<Addimage/>:(selected==='addmainimg'?<MainImage/>:<AddThankingPerson/>))
           }
 
         
